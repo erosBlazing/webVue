@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <!-- view -->
+    <div id="root">
+        <h1>学校名称：{{ nmae }}</h1>
+        <h1>学校地址：{{ address }}</h1>
+    </div>
+    <script>
+        // vm
+        new Vue({
+            el: '#root',
+            // model
+            data: {
+                name: '北清复交',
+                address: '上海'
+            }
+        })
+    </script>
+</body>
+</html>

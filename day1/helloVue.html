@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">hello,{{ name }}</div>
+    <script>
+        // 创建 Vue 实例
+        new Vue({
+            el: '#root',    //el 通常用于指定当前 Vue 实例 为哪个容器服务，值通常为 css 选择器字符串
+            data: { //data 中用于存储数据，数据供 el 所指定的容器去使用， 值暂时先写成一个对象
+                name: 'Vue'
+            }
+        })
+    </script>
+</body>
+</html>
