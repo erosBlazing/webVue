@@ -10,7 +10,10 @@
 <body>
     <div id="root">
         <h2>欢迎学习{{name}}</h2>
-        <button v-on:click="showInfo">点我提示信息</button>
+        <button v-on:click="showInfo1">点我提示信息</button>
+        <!-- v-on 的简写形式 -->
+        <button @click="showInfo2(66, $event)">点我提示信息</button>
+        <!-- 传参时，如果需要可以使用 $event 进行占位 -->
     </div>
     <script>
         new Vue({
@@ -19,11 +22,16 @@
                 name: 'Vue'
             },
             methods: {
-                showInfo(event) {
+                showInfo1(event) {
                     console.log(event);
-                    console.log(this);
-                    alert('整个牛项目');
-                }
+                    console.log(this);  //此处 this 是 Vue
+                    alert('学习Vue，整个牛项目');
+                },
+                showInfo2(number) {
+                    console.log(number);
+                    console.log(this);  //此处 this 是 Vue
+                    alert('学习Angular，整个牛项目');
+                },
             },
         })
     </script>
