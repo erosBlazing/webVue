@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1>你好，{{ name }}</h1>
+    </div>
+    <script>
+        // 由 Vue 所管理的函数，一定不要写箭头函数
+
+        // const vm = new Vue({
+        //     // el: '#root', //第一种写法
+        //     data: {
+        //         name: 'Vue'
+        //     }
+        // })
+        // vm.$mount('#root')  //第二种写法
+
+        new Vue({
+            el: '#root',
+            // 第一种写法：对象式
+            // data: {
+            //     name: 'Vue'
+            // }
+
+            // 第二种写法：函数式
+            data() {
+                //this 是 Vue 实例对象
+                return {
+                    name: 'Vue'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
