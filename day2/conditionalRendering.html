@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <!-- 条件渲染：
+            1.v-if:适用于切换频率较低的场景。
+            2.不展示的DOM元素直接移除
+            3.v-if可以和 v-else-if、v-else 一起使用，但要求解构不能被“打断”
+            4.v-show:适用于切换频率较高的场景。
+            5.v-show不展示的DOM元素未被移除，仅仅是使用样式隐藏掉
+            6.使用 v-if 的时候，元素可能无法获取到，而使用 v-show 一定可以获取到
+    -->
+    <div id="root">
+        <!-- 使用 v-show 做条件渲染 -->
+        <!-- <h2 v-show="false">欢迎学习{{name}}</h2> -->
+
+        <!-- 使用 v-if 做条件渲染 -->
+        <!-- <h2 v-if="false">欢迎学习{{name}}</h2> --> 
+        <h2>当前的n值是：{{n}}</h2>
+        <!-- 切换频率高，优先采用 v-show -->
+        <button @click="n++">点我n++</button>
+        <div v-show="n === 1">Angualar</div>
+        <div v-show="n === 2">React</div>
+        <div v-show="n === 3">Vue</div>
+
+        <div v-if="n === 1">Angualar</div>
+        <div v-else-if="n === 2">React</div>
+        <div v-else-if="n === 3">Vue</div>
+        <div v-else>哈哈哈</div>
+
+        <template v-if="n === 1">
+            <h2>你好</h2>
+            <h2>北京</h2>
+        </template>
+    </div>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                name: 'Vue',
+                n: 0
+            }
+        })
+    </script>
+</body>
+</html>
