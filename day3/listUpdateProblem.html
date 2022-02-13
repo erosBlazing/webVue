@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>人员列表</h2>
+        <button @click="update">更新马冬梅的信息</button>
+        <ul>
+            <li v-for="(people, index) in persons" :key="people.id">
+                {{people.name}}-{{people.age}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                persons:[
+                    {id:'001', name:'马冬梅', age: 30, sex: '女'},
+                    {id:'002', name:'周冬雨', age: 20, sex: '女'},
+                    {id:'003', name:'周杰伦', age: 21, sex: '男'},
+                    {id:'004', name:'温兆伦', age: 29, sex: '男'}
+
+                ],
+            },
+            methods: {
+                update() {
+                    // this.persons[0].name = '马什么梅'
+                    // this.persons[0].age = 50
+                    // this.persons[0].sex = '男'
+
+                    this.persons[0] = {id:'001', name:'马什么梅', age: 50, sex: '男'}
+                }
+            },
+        })
+    </script>
+</body>
+</html>
